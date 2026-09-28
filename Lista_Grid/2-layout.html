@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout 2 - Grid</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 80px 1fr 80px;
+            grid-template-areas:
+                "header header"
+                "nav content"
+                "footer footer";
+        }
+
+        header {
+            grid-area: header;
+            background-color: #e0005e;
+        }
+
+        nav {
+            grid-area: nav;
+            background-color: #a9a25f;
+        }
+
+        main {
+            grid-area: content;
+            background-color: #e19c6c;
+            padding: 20px 50px;
+        }
+
+        footer {
+            grid-area: footer;
+            background-color: #4d8f7b;
+        }
+
+        header, nav, footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+        }
+
+        main h2 {
+            text-align: center;
+            font-size: 30px;
+            font-weight: normal;
+            margin-top: 0;
+        }
+
+        .imagem {
+            float: left;
+            width: 150px;
+            height: 130px;
+            border: 3px solid black;
+            border-radius: 5px;
+            margin: 0 15px 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>Header</header>
+        <nav>Nav</nav>
+        <main>
+            <h2>Content</h2>
+            <div class="imagem"></div>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore
+                et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+                aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+                officia deserunt mollit anim id est laborum.
+            </p>
+        </main>
+        <footer>Footer</footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estudos de PPI</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #eeecef;
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            font-weight: normal;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1100px;
+            min-height: 550px;
+            margin: 0 auto 30px auto;
+            background-color: white;
+            padding: 10px;
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: 3fr 2fr 2fr 1fr;
+            grid-template-rows: 1.3fr 1fr 0.9fr;
+            gap: 10px;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .topico {
+            padding: 15px;
+        }
+
+        .topico h2 {
+            margin-top: 0;
+        }
+
+        .topico a {
+            color: #333;
+        }
+
+        .topico a:hover {
+            color: white;
+        }
+
+        .web {
+            grid-column: 1;
+            grid-row: 1;
+            background-color: #f79c25;
+        }
+
+        .html {
+            grid-column: 2;
+            background-color: #f5b7a6;
+            grid-row: 1 / 3;
+        }
+
+        .css {
+            grid-row: 1;
+            background-color: #c9e0de;
+            grid-column: 3 / 5;
+        }
+
+        .position {
+            grid-column: 1;
+            grid-row: 2;
+            background-color: #b7c9e0;
+        }
+
+        .grid {
+            grid-column: 3;
+            background-color: #bcca6e;
+            grid-row: 2 / 4;
+        }
+
+        .flex {
+            grid-row: 3;
+            background-color: #f3b233;
+            grid-column: 1 / 3;
+        }
+
+        .animate {
+            grid-column: 4;
+            grid-row: 2 / 4;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+            text-align: center;
+        }
+
+        .animate a {
+            color: #333;
+            font-weight: bold;
+        }
+
+        .bolinha {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            animation: pular 1s ease-in-out infinite alternate;
+        }
+
+        .b1 { background-color: #f0955f; }
+        .b2 { background-color: #dcb2b0; animation-delay: 0.2s; }
+        .b3 { background-color: #c2cda1; animation-delay: 0.4s; }
+        .b4 { background-color: #d9cdee; animation-delay: 0.6s; }
+
+        @media screen and (max-width: 600px) {
+            .container {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+                min-height: auto;
+            }
+
+            .web, .html, .css, .position, .grid, .flex, .animate {
+                grid-column: auto;
+                grid-row: auto;
+            }
+
+            .animate {
+                flex-direction: row;
+                padding: 15px;
+            }
+        }
+
+        @keyframes pular {
+            from {
+                transform: translateY(-5px);
+            }
+            to {
+                transform: translateY(5px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Conteúdos de Programação para Internet</h1>
+
+    <div class="container">
+        <div class="topico web">
+            <h2>WEB</h2>
+            <p>História da internet e da web, arquitetura cliente-servidor e o protocolo HTTP.</p>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview" target="_blank">Visão geral do HTTP</a>
+        </div>
+
+        <div class="topico html">
+            <h2>HTML</h2>
+            <p>Linguagem de marcação usada para estruturar as páginas: textos, listas, tabelas, imagens, links e formulários.</p>
+            <ul>
+                <li><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank">HTML na MDN</a></li>
+                <li><a href="https://www.w3schools.com/html/" target="_blank">W3Schools HTML</a></li>
+            </ul>
+        </div>
+
+        <div class="topico css">
+            <h2>CSS</h2>
+            <p>Folhas de estilo: seletores, cores, fontes e box model.</p>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank">CSS na MDN</a>
+        </div>
+
+        <div class="topico position">
+            <h2>Position</h2>
+            <p>static, relative, absolute, fixed e sticky.</p>
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/position" target="_blank">Propriedade position</a>
+        </div>
+
+        <div class="topico grid">
+            <h2>Grid</h2>
+            <p>Layout em duas dimensões, com linhas e colunas.</p>
+            <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Guia de Grid</a><br>
+            <a href="https://cssgridgarden.com/#pt-br" target="_blank">Grid Garden</a>
+        </div>
+
+        <div class="animate">
+            <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/animation" target="_blank">Animate</a>
+            <div class="bolinha b1"></div>
+            <div class="bolinha b2"></div>
+            <div class="bolinha b3"></div>
+            <div class="bolinha b4"></div>
+        </div>
+
+        <div class="topico flex">
+            <h2>Flex</h2>
+            <p>Flexbox organiza os itens em uma direção, linha ou coluna.</p>
+            <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Guia de Flexbox</a> |
+            <a href="https://flexboxfroggy.com/#pt-br" target="_blank">Flexbox Froggy</a>
+        </div>
+    </div>
+</body>
+</html>

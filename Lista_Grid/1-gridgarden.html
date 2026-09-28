@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Grid Garden</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            max-width: 800px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Grid Garden</h1>
+    <p>Joguei todos os 28 níveis do <a href="https://cssgridgarden.com/#pt-br" target="_blank">Grid Garden</a>. Abaixo explico a solução do nível 1.</p>
+
+    <h2>Nível 1</h2>
+    <p>
+        No primeiro nível a horta é um grid de 5 colunas e 5 linhas, e a cenoura está na terceira coluna.
+        Precisamos regar a cenoura, então a área de água (#water) tem que ficar em cima da terceira coluna.
+    </p>
+<pre>
+#water {
+    grid-column-start: 3;
+}
+</pre>
+    <p>
+        A propriedade <b>grid-column-start</b> diz em qual <b>linha</b> do grid o item começa. As linhas do grid
+        são as divisões entre as colunas e começam no número 1, que é a borda da esquerda. Então começar na linha 3
+        faz o item ficar na terceira coluna. Como não foi informado o grid-column-end, o item ocupa só uma coluna.
+    </p>
+
+    <p>Referência: <a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">A Complete Guide to CSS Grid - CSS-Tricks</a></p>
+</body>
+</html>
