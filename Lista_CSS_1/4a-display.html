@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>4a - display block</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            height: 135px;
+            line-height: 135px;
+            text-align: center;
+        }
+
+        .d1 { background-color: #6600ff; }
+        .d2 { background-color: #009614; }
+        .d3 { background-color: #ff0000; }
+        .d4 { background-color: #f0ff24; }
+    </style>
+</head>
+<body>
+    <div class="d1">1</div>
+    <div class="d2">2</div>
+    <div class="d3">3</div>
+    <div class="d4">4</div>
+
+    <!--
+        Por que fica assim:
+        A div é um elemento de bloco (display: block) por padrão. Elemento de bloco
+        sempre começa numa linha nova e ocupa toda a largura disponível do pai.
+        Por isso cada div fica uma embaixo da outra ocupando a tela inteira na horizontal.
+        O line-height igual à altura deixa o número no meio na vertical.
+    -->
+</body>
+</html>

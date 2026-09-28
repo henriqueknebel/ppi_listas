@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Diner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #999;
+            padding: 6px 10px;
+        }
+        th {
+            background-color: #ddd;
+        }
+        code {
+            color: #c7254e;
+        }
+    </style>
+</head>
+<body>
+    <h1>CSS Diner - respostas dos níveis</h1>
+    <p>Joguei todos os 32 níveis do <a href="https://flukeout.github.io/" target="_blank">CSS Diner</a>. Abaixo estão os seletores que usei em cada um.</p>
+
+    <table>
+        <tr>
+            <th>Nível</th>
+            <th>Seletor</th>
+            <th>O que faz</th>
+        </tr>
+        <tr><td>1</td><td><code>plate</code></td><td>seleciona pelo nome da tag</td></tr>
+        <tr><td>2</td><td><code>bento</code></td><td>seleciona pelo nome da tag</td></tr>
+        <tr><td>3</td><td><code>#fancy</code></td><td>seleciona pelo id</td></tr>
+        <tr><td>4</td><td><code>plate apple</code></td><td>apple que está dentro de plate (descendente)</td></tr>
+        <tr><td>5</td><td><code>#fancy pickle</code></td><td>pickle dentro do elemento com id fancy</td></tr>
+        <tr><td>6</td><td><code>.small</code></td><td>seleciona pela classe</td></tr>
+        <tr><td>7</td><td><code>orange.small</code></td><td>orange que tem a classe small</td></tr>
+        <tr><td>8</td><td><code>bento orange.small</code></td><td>orange.small dentro de bento</td></tr>
+        <tr><td>9</td><td><code>plate, bento</code></td><td>a vírgula junta dois seletores</td></tr>
+        <tr><td>10</td><td><code>*</code></td><td>seletor universal, pega tudo</td></tr>
+        <tr><td>11</td><td><code>plate *</code></td><td>tudo que está dentro de plate</td></tr>
+        <tr><td>12</td><td><code>plate + apple</code></td><td>apple logo depois de um plate (irmão adjacente)</td></tr>
+        <tr><td>13</td><td><code>bento ~ pickle</code></td><td>todos os pickle que vem depois de bento (irmãos)</td></tr>
+        <tr><td>14</td><td><code>plate &gt; apple</code></td><td>apple filho direto de plate</td></tr>
+        <tr><td>15</td><td><code>orange:first-child</code></td><td>orange que é o primeiro filho</td></tr>
+        <tr><td>16</td><td><code>plate :only-child</code></td><td>elemento que é o único filho dentro de plate</td></tr>
+        <tr><td>17</td><td><code>.small:last-child</code></td><td>.small que é o último filho</td></tr>
+        <tr><td>18</td><td><code>plate:nth-child(3)</code></td><td>plate que é o terceiro filho</td></tr>
+        <tr><td>19</td><td><code>bento:nth-last-child(3)</code></td><td>terceiro contando do final</td></tr>
+        <tr><td>20</td><td><code>apple:first-of-type</code></td><td>primeiro apple entre os irmãos</td></tr>
+        <tr><td>21</td><td><code>plate:nth-of-type(even)</code></td><td>os plate nas posições pares</td></tr>
+        <tr><td>22</td><td><code>plate:nth-of-type(2n+3)</code></td><td>plate a partir do terceiro, de 2 em 2</td></tr>
+        <tr><td>23</td><td><code>plate apple:only-of-type</code></td><td>apple que é o único do seu tipo dentro de plate</td></tr>
+        <tr><td>24</td><td><code>.small:last-of-type</code></td><td>último elemento do seu tipo com a classe small</td></tr>
+        <tr><td>25</td><td><code>bento:empty</code></td><td>bento sem nada dentro</td></tr>
+        <tr><td>26</td><td><code>apple:not(.small)</code></td><td>apple que não tem a classe small</td></tr>
+        <tr><td>27</td><td><code>[for]</code></td><td>qualquer elemento que tem o atributo for</td></tr>
+        <tr><td>28</td><td><code>plate[for]</code></td><td>plate que tem o atributo for</td></tr>
+        <tr><td>29</td><td><code>[for="Vitaminx"]</code></td><td>atributo com valor exato</td></tr>
+        <tr><td>30</td><td><code>[for^="Sa"]</code></td><td>atributo que começa com "Sa"</td></tr>
+        <tr><td>31</td><td><code>[for$="ato"]</code></td><td>atributo que termina com "ato"</td></tr>
+        <tr><td>32</td><td><code>[for*="obb"]</code></td><td>atributo que contém "obb"</td></tr>
+    </table>
+
+    <p>Referência: <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/CSS_selectors" target="_blank">MDN - Seletores CSS</a></p>
+</body>
+</html>

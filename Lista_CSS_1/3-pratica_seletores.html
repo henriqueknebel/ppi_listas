@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Prática de seletores</title>
+    <style>
+        h1 {
+            font-family: Georgia, serif;
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        #p1 {
+            font-family: Arial, sans-serif;
+            color: #c0392b;
+        }
+
+        #p2 {
+            font-family: "Courier New", monospace;
+            color: #27ae60;
+        }
+
+        #p3 {
+            font-family: Verdana, sans-serif;
+            color: #2980b9;
+        }
+
+        #p4 {
+            font-family: "Times New Roman", serif;
+            color: #8e44ad;
+        }
+
+        #p5 {
+            font-family: Tahoma, sans-serif;
+            color: #d35400;
+        }
+
+        .negrito {
+            font-weight: bold;
+        }
+
+        .fundo {
+            background-color: yellow;
+            color: black;
+        }
+
+        .grande {
+            font-size: 24px;
+        }
+
+        .sublinhado {
+            text-decoration: underline;
+        }
+
+        p span.italico {
+            font-style: italic;
+            color: gray;
+        }
+
+        #p5 span {
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Praticando Seletores CSS</h1>
+
+    <p id="p1">
+        Lorem ipsum dolor sit amet, <span class="negrito">consectetur</span> adipiscing elit. Sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+        <span class="fundo">exercitation</span> ullamco laboris.
+    </p>
+
+    <p id="p2">
+        Duis aute irure dolor in <span class="grande">reprehenderit</span> in voluptate velit esse cillum
+        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+    </p>
+
+    <p id="p3">
+        Sunt in culpa qui officia <span class="sublinhado">deserunt</span> mollit anim id est laborum.
+        Curabitur pretium tincidunt lacus, <span class="italico">nulla gravida</span> orci a odio.
+    </p>
+
+    <p id="p4">
+        Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis
+        <span class="negrito fundo">sollicitudin</span> mauris. Integer in mauris eu nibh euismod gravida.
+    </p>
+
+    <p id="p5">
+        Praesent <span>congue</span> erat at massa. Sed cursus turpis vitae tortor. Donec posuere vulputate
+        arcu. Phasellus accumsan cursus velit.
+    </p>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Exemplo especificidade de seletores</title>
+    <style>
+        /*regra 1*/ li{color:red;}
+        /*regra 2*/ .churras{color:green;}
+        /*regra 3*/ .fruta{color:gray}
+        /*regra 4*/ li+li.churras{color: black;}
+        /*regra 5*/ .churras[draggable="true"]{color: magenta;}
+        /*regra 6*/ #lip1,#lip2,#lip3{color:blue}
+        /*regra 7*/ #lip3.fruta{color:orange}
+        /*regra 8*/ ol>li.churras#lip5{color:purple}
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+        }
+        .explicacao {
+            color: #333;
+        }
+        .explicacao li {
+            color: #333;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <ol>
+    <!--item 1--> <li id="lip0">Abacaxi</li>
+    <!--item 2--> <li class="fruta">Melão</li>
+    <!--item 3--> <li id="lip2" class="fruta">Pera</li>
+    <!--item 4--> <li id="lip3" class="fruta">Uva</li>
+    <!--item 5--> <li id="lip4" class="fruta">Maçã</li>
+    <!--item 6--> <li class="churras">Carne</li>
+    <!--item 7--> <li class="churras">Linguiça</li>
+    <!--item 8--> <li id="lip7" class="churras" draggable="true">Pão de alho</li>
+    </ol>
+
+    <hr>
+
+    <div class="explicacao">
+        <h2>Explicação</h2>
+        <p>
+            Quando mais de uma regra pega o mesmo elemento, o navegador usa a que tem a maior
+            <b>especificidade</b>. A conta é feita assim: (ids, classes/atributos/pseudo-classes, tags).
+            O id vale mais que a classe, e a classe vale mais que a tag. Se empatar, vale a regra que
+            aparece por último no CSS.
+        </p>
+        <p>Especificidade de cada regra:</p>
+        <ul>
+            <li>regra 1 <code>li</code> = (0,0,1)</li>
+            <li>regra 2 <code>.churras</code> = (0,1,0)</li>
+            <li>regra 3 <code>.fruta</code> = (0,1,0)</li>
+            <li>regra 4 <code>li+li.churras</code> = (0,1,2)</li>
+            <li>regra 5 <code>.churras[draggable="true"]</code> = (0,2,0)</li>
+            <li>regra 6 <code>#lip1,#lip2,#lip3</code> = (1,0,0) cada um</li>
+            <li>regra 7 <code>#lip3.fruta</code> = (1,1,0)</li>
+            <li>regra 8 <code>ol&gt;li.churras#lip5</code> = (1,1,2)</li>
+        </ul>
+
+        <p>Cada item:</p>
+        <ul>
+            <li><b>Item 1 - Abacaxi (vermelho):</b> o id é lip0, que não aparece em nenhuma regra, e ele não tem classe. Então só a regra 1 (<code>li</code>) pega ele.</li>
+            <li><b>Item 2 - Melão (cinza):</b> pega a regra 1 e a regra 3. A regra 3 é de classe (0,1,0) e ganha da tag (0,0,1).</li>
+            <li><b>Item 3 - Pera (azul):</b> pega as regras 1, 3 e 6. A regra 6 tem o id #lip2 (1,0,0), que ganha da classe.</li>
+            <li><b>Item 4 - Uva (laranja):</b> pega as regras 1, 3, 6 e 7. A regra 7 junta id + classe (1,1,0) e fica maior que a regra 6 que só tem o id (1,0,0).</li>
+            <li><b>Item 5 - Maçã (cinza):</b> o id lip4 não está em nenhuma regra, então fica a regra 3 da classe fruta.</li>
+            <li><b>Item 6 - Carne (preto):</b> pega a regra 1, a regra 2 e a regra 4, porque ela é um li.churras logo depois de outro li. A regra 4 (0,1,2) ganha da regra 2 (0,1,0) por causa das duas tags.</li>
+            <li><b>Item 7 - Linguiça (preto):</b> mesma coisa do item 6, ela vem depois de um li, então vale a regra 4.</li>
+            <li><b>Item 8 - Pão de alho (magenta):</b> pega as regras 1, 2, 4 e 5. A regra 5 tem classe + atributo (0,2,0), que é maior que a regra 4 (0,1,2), porque a classe conta antes das tags. O id lip7 não está em nenhuma regra.</li>
+        </ul>
+        <p>
+            A regra 8 não é aplicada em nenhum item porque não existe nenhum elemento com id lip5. A regra 6 também
+            não usa o #lip1 porque ele não existe na lista.
+        </p>
+        <p>Referência: <a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS/Specificity" target="_blank">MDN - Especificidade</a></p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>4c - position absolute</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+        }
+
+        .box {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+        }
+
+        #box1 {
+            background-color: red;
+            top: 0;
+            left: 0;
+        }
+
+        #box2 {
+            background-color: yellow;
+            top: 0;
+            right: 0;
+        }
+
+        #box3 {
+            background-color: green;
+            bottom: 0;
+            right: 0;
+        }
+
+        #box4 {
+            background-color: blue;
+            bottom: 0;
+            left: 0;
+        }
+
+        #box5 {
+            background-color: magenta;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">box1</div>
+        <div class="box" id="box2">box2</div>
+        <div class="box" id="box3">box3</div>
+        <div class="box" id="box4">box4</div>
+        <div class="box" id="box5">box5</div>
+    </div>
+
+    <!--
+        Por que fica assim:
+        A div container tem position: relative, então ela vira a referência para os filhos.
+        As caixas têm position: absolute, isso tira elas do fluxo normal da página e deixa
+        posicionar com top, right, bottom e left em relação ao container.
+        box1: top 0 e left 0 = canto de cima na esquerda
+        box2: top 0 e right 0 = canto de cima na direita
+        box3: bottom 0 e right 0 = canto de baixo na direita
+        box4: bottom 0 e left 0 = canto de baixo na esquerda
+        box5: top e left 50% coloca o canto da caixa no meio, e a margin negativa de metade
+        do tamanho (50px) puxa ela de volta para ficar bem no centro.
+    -->
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>4b - display inline-block</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        div {
+            display: inline-block;
+            width: 25%;
+            height: 135px;
+            line-height: 135px;
+            text-align: center;
+        }
+
+        .d1 { background-color: #6600ff; }
+        .d2 { background-color: #009614; }
+        .d3 { background-color: #ff0000; }
+        .d4 { background-color: #f0ff24; }
+    </style>
+</head>
+<body>
+    <div class="d1">1</div><div class="d2">2</div><div class="d3">3</div><div class="d4">4</div>
+
+    <!--
+        Por que fica assim:
+        Com display: inline-block as divs deixam de quebrar a linha e ficam uma do lado
+        da outra, igual texto, mas continuam aceitando width e height (o inline normal não aceita).
+        Cada uma tem width 25%, então as 4 juntas ocupam 100% da largura.
+        As divs estão escritas grudadas no HTML porque o inline-block considera o espaço/enter
+        entre as tags como um espaço de texto, e esse espaço faria a última div cair para a linha de baixo.
+        O resto da tela fica em branco porque as divs só têm 135px de altura.
+    -->
+</body>
+</html>

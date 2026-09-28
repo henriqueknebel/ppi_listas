@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Barquinho</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .ceu {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: linear-gradient(to bottom, white, #b9e3f5);
+        }
+
+        /* nuvem */
+        .nuvem {
+            position: absolute;
+            top: 100px;
+            left: -250px;
+            width: 120px;
+            height: 50px;
+            background-color: #f5fbff;
+            border-radius: 50px;
+            box-shadow: 60px 10px 0 5px #f5fbff, 110px 20px 0 0 #f5fbff;
+            animation: nuvem 25s linear infinite;
+            z-index: 1;
+        }
+
+        @keyframes nuvem {
+            from {
+                left: -250px;
+            }
+            to {
+                left: 110%;
+            }
+        }
+
+        /* barco */
+        .barco {
+            position: absolute;
+            bottom: 22%;
+            left: -130px;
+            width: 110px;
+            height: 100px;
+            background-image: url("barco.svg");
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 3;
+            animation: navegar 12s linear infinite, balanco 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes navegar {
+            from {
+                left: -130px;
+            }
+            to {
+                left: 100%;
+            }
+        }
+
+        @keyframes balanco {
+            from {
+                transform: rotate(-6deg);
+            }
+            to {
+                transform: rotate(6deg);
+            }
+        }
+
+        /* mar */
+        .mar {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 25%;
+            background-color: #4455ff;
+            z-index: 2;
+        }
+
+        .mar::before {
+            content: "";
+            position: absolute;
+            top: -20px;
+            left: 0;
+            width: 200%;
+            height: 40px;
+            background: radial-gradient(circle at 20px 0px, transparent 20px, #4455ff 21px);
+            background-size: 40px 40px;
+            animation: ondas 4s linear infinite;
+        }
+
+        .mar::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            width: 200%;
+            height: 30px;
+            background: radial-gradient(circle at 15px 0px, transparent 15px, #6677ff 16px);
+            background-size: 30px 30px;
+            opacity: 0.6;
+            animation: ondas 6s linear infinite reverse;
+        }
+
+        @keyframes ondas {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-40px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ceu">
+        <div class="nuvem"></div>
+        <div class="barco"></div>
+        <div class="mar"></div>
+    </div>
+</body>
+</html>
