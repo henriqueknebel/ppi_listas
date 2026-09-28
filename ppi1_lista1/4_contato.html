@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Contato</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Autor: Henrique Knebel -->
+    <h1>Contato</h1>
+    <p class="aviso">Preencha os campos abaixo para entrar em contato. Os campos com * são obrigatórios.</p>
+
+    <form action="#" method="post">
+        <label for="nome">Nome *</label>
+        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+
+        <label for="email">E-mail *</label>
+        <input type="email" id="email" name="email" placeholder="exemplo@email.com" required>
+
+        <label for="telefone">Telefone</label>
+        <input type="tel" id="telefone" name="telefone" placeholder="(47) 9999-9999" pattern="\(\d{2}\) \d{4,5}-\d{4}">
+
+        <label for="idade">Idade</label>
+        <input type="number" id="idade" name="idade" placeholder="Sua idade" min="1" max="120">
+
+        <label for="assunto">Assunto</label>
+        <input type="text" id="assunto" name="assunto" placeholder="Assunto da mensagem">
+
+        <label for="estado">Estado</label>
+        <select id="estado" name="estado">
+            <option value="">Selecione</option>
+            <option value="PR">Paraná</option>
+            <option value="RS">Rio Grande do Sul</option>
+            <option value="SC">Santa Catarina</option>
+            <option value="SP">São Paulo</option>
+            <option value="RJ">Rio de Janeiro</option>
+            <option value="MG">Minas Gerais</option>
+        </select>
+
+        <label for="mensagem">Mensagem</label>
+        <textarea id="mensagem" name="mensagem" rows="5" placeholder="Escreva sua mensagem"></textarea>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+    <hr>
+    <a href="4_curriculo.html">Voltar para o currículo</a>
+</body>
+</html>

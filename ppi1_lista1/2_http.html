@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Protocolo HTTP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Autor: Henrique Knebel -->
+    <h1>Protocolo HTTP</h1>
+
+    <h2>O que é</h2>
+    <p>
+        O <b>HTTP</b> (HyperText Transfer Protocol) é o protocolo usado na Web para a comunicação entre
+        o <b>cliente</b> (normalmente o navegador) e o <b>servidor</b>. Ele funciona na arquitetura
+        cliente-servidor: o cliente faz uma <em>requisição</em> (request) e o servidor devolve uma
+        <em>resposta</em> (response).
+    </p>
+    <p>
+        As mensagens vão pela porta <b>80</b> (HTTP) ou <b>443</b> (HTTPS, que é o HTTP com criptografia).
+        Na maioria das vezes a resposta tem um código HTML, que o navegador interpreta e mostra como página.
+    </p>
+
+    <img src="img/http.svg" alt="Cliente fazendo requisição para o servidor e recebendo a resposta" width="600">
+
+    <h2>Como funciona quando abrimos um site</h2>
+    <ol>
+        <li>Digitamos o endereço no navegador, por exemplo <code>https://www.ifsc.edu.br</code></li>
+        <li>O navegador descobre o IP do servidor (DNS)</li>
+        <li>O navegador manda uma requisição HTTP para o servidor</li>
+        <li>O servidor processa e manda a resposta com o HTML</li>
+        <li>O navegador lê o HTML e faz novas requisições para as imagens, CSS e JS da página</li>
+    </ol>
+
+    <h2>Métodos HTTP</h2>
+    <table>
+        <tr>
+            <th>Método</th>
+            <th>Para que serve</th>
+        </tr>
+        <tr>
+            <td>GET</td>
+            <td>Buscar um recurso (página, imagem...)</td>
+        </tr>
+        <tr>
+            <td>POST</td>
+            <td>Enviar dados para o servidor, como um formulário</td>
+        </tr>
+        <tr>
+            <td>PUT</td>
+            <td>Atualizar um recurso</td>
+        </tr>
+        <tr>
+            <td>DELETE</td>
+            <td>Apagar um recurso</td>
+        </tr>
+    </table>
+
+    <h2>Requisição capturada</h2>
+    <p>Capturei essa requisição no navegador apertando F12 e indo na aba Rede (Network):</p>
+<pre>
+GET / HTTP/1.1
+Host: www.ifsc.edu.br
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/128.0
+Accept: text/html,application/xhtml+xml
+Accept-Language: pt-BR,pt;q=0.9
+Accept-Encoding: gzip, deflate, br
+Connection: keep-alive
+</pre>
+
+    <h3>Campos do request</h3>
+    <ul>
+        <li><b>GET / HTTP/1.1</b>: linha inicial, tem o método (GET), o caminho do recurso (/) e a versão do protocolo</li>
+        <li><b>Host</b>: o domínio do servidor que estamos acessando</li>
+        <li><b>User-Agent</b>: informa qual navegador e sistema operacional fez o pedido</li>
+        <li><b>Accept</b>: os tipos de conteúdo que o navegador aceita receber</li>
+        <li><b>Accept-Language</b>: o idioma preferido</li>
+        <li><b>Accept-Encoding</b>: os tipos de compressão que o navegador entende</li>
+        <li><b>Connection</b>: keep-alive quer dizer para manter a conexão aberta para os próximos pedidos</li>
+    </ul>
+
+    <h2>Resposta capturada</h2>
+<pre>
+HTTP/1.1 200 OK
+Date: Wed, 12 Aug 2026 11:20:05 GMT
+Server: Apache
+Content-Type: text/html; charset=UTF-8
+Content-Length: 48213
+Cache-Control: no-cache
+
+&lt;!DOCTYPE html&gt;
+&lt;html&gt; ...
+</pre>
+
+    <h3>Campos do response</h3>
+    <ul>
+        <li><b>HTTP/1.1 200 OK</b>: linha de status, com a versão e o código de resposta</li>
+        <li><b>Date</b>: data e hora da resposta</li>
+        <li><b>Server</b>: o software do servidor</li>
+        <li><b>Content-Type</b>: o tipo do conteúdo que veio, aqui é HTML em UTF-8</li>
+        <li><b>Content-Length</b>: o tamanho do corpo da resposta em bytes</li>
+        <li><b>Cache-Control</b>: regras de cache para o navegador</li>
+        <li>Depois de uma linha em branco vem o <b>corpo</b>, que é o HTML da página</li>
+    </ul>
+
+    <h3>Códigos de status</h3>
+    <ul>
+        <li><b>200</b> - OK, deu certo</li>
+        <li><b>301</b> - o recurso mudou de endereço</li>
+        <li><b>404</b> - não encontrado</li>
+        <li><b>500</b> - erro no servidor</li>
+    </ul>
+
+    <hr>
+    <a href="1.html">Voltar</a>
+</body>
+</html>

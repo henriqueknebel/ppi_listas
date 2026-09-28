@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="220" viewBox="0 0 600 220" font-family="Arial, sans-serif">
+  <rect x="20" y="60" width="150" height="100" rx="10" fill="#4a90d9"/>
+  <text x="95" y="105" fill="white" font-size="18" text-anchor="middle">Cliente</text>
+  <text x="95" y="130" fill="white" font-size="13" text-anchor="middle">(navegador)</text>
+  <rect x="430" y="60" width="150" height="100" rx="10" fill="#5cb85c"/>
+  <text x="505" y="105" fill="white" font-size="18" text-anchor="middle">Servidor</text>
+  <text x="505" y="130" fill="white" font-size="13" text-anchor="middle">(web)</text>
+  <line x1="175" y1="85" x2="420" y2="85" stroke="#333" stroke-width="3"/>
+  <polygon points="420,78 432,85 420,92" fill="#333"/>
+  <text x="300" y="75" font-size="14" text-anchor="middle">Request: GET /index.html</text>
+  <line x1="180" y1="140" x2="425" y2="140" stroke="#333" stroke-width="3"/>
+  <polygon points="180,133 168,140 180,147" fill="#333"/>
+  <text x="300" y="165" font-size="14" text-anchor="middle">Response: 200 OK + HTML</text>
+</svg>
