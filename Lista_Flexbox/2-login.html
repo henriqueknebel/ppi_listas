@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout 2</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #eee;
+            font-family: Arial, sans-serif;
+        }
+
+        .tela {
+            width: 400px;
+            height: 680px;
+            background-color: white;
+            border: 4px solid #b400ff;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 40px 35px 45px 35px;
+            box-sizing: border-box;
+        }
+
+        .logo {
+            color: #999;
+            font-size: 20px;
+        }
+
+        .campos {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .campo {
+            height: 32px;
+            background-color: #e8e8e8;
+            border-radius: 4px;
+        }
+
+        .rodape {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .circulo {
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background-color: #e3e3e3;
+        }
+
+        .botao {
+            width: 140px;
+            height: 32px;
+            background-color: #e8e8e8;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <div class="tela">
+        <div class="logo">Company Logo</div>
+
+        <div class="campos">
+            <div class="campo"></div>
+            <div class="campo"></div>
+            <div class="campo"></div>
+            <div class="campo"></div>
+        </div>
+
+        <div class="rodape">
+            <div class="circulo"></div>
+            <div class="botao"></div>
+        </div>
+    </div>
+</body>
+</html>

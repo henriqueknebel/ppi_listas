@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cards de imagens</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .cards {
+            display: flex;
+            width: 850px;
+            height: 400px;
+            gap: 10px;
+        }
+
+        .card {
+            flex: 1;
+            border-radius: 40px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .card.ativo {
+            flex: 9;
+        }
+
+        .icone {
+            position: absolute;
+            bottom: 20px;
+            left: 10px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+        }
+
+        .texto {
+            position: absolute;
+            bottom: 20px;
+            left: 70px;
+            color: white;
+            display: none;
+        }
+
+        .card.ativo .texto {
+            display: block;
+        }
+
+        .texto h3 {
+            margin: 0;
+        }
+
+        .texto p {
+            margin: 0;
+        }
+
+        .c1 { background-image: url("https://picsum.photos/id/1018/800/600"); }
+        .c2 { background-image: url("https://picsum.photos/id/1036/800/600"); }
+        .c3 { background-image: url("https://picsum.photos/id/1043/800/600"); }
+        .c4 { background-image: url("https://picsum.photos/id/1015/800/600"); }
+        .c5 { background-image: url("https://picsum.photos/id/1016/800/600"); }
+    </style>
+</head>
+<body>
+    <div class="cards">
+        <div class="card c1">
+            <div class="icone">🚶</div>
+        </div>
+        <div class="card c2 ativo">
+            <div class="icone">❄️</div>
+            <div class="texto">
+                <h3>Oretemauw</h3>
+                <p>Omuke trughte a otufta</p>
+            </div>
+        </div>
+        <div class="card c3">
+            <div class="icone">🌲</div>
+        </div>
+        <div class="card c4">
+            <div class="icone">💧</div>
+        </div>
+        <div class="card c5">
+            <div class="icone">☀️</div>
+        </div>
+    </div>
+</body>
+</html>

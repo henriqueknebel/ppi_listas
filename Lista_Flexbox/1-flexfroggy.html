@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox Froggy</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 30px;
+            max-width: 800px;
+        }
+        pre {
+            background-color: #eee;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Flexbox Froggy</h1>
+    <p>Joguei todos os 24 níveis do <a href="https://flexboxfroggy.com/#pt-br" target="_blank">Flexbox Froggy</a>. Abaixo explico a solução de dois níveis acima do 10.</p>
+
+    <h2>Nível 11</h2>
+    <p>Os sapos precisam ir para as vitórias-régias que estão em coluna, na parte de baixo da tela.</p>
+<pre>
+#pond {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+</pre>
+    <ul>
+        <li><b>display: flex</b>: transforma o #pond num container flex e os sapos viram itens flex.</li>
+        <li><b>flex-direction: column</b>: muda o eixo principal para vertical, então os sapos ficam um embaixo do outro em vez de um do lado do outro.</li>
+        <li><b>justify-content: flex-end</b>: alinha os itens no final do eixo principal. Como o eixo agora é vertical, o final é a parte de baixo. Isso é o que confunde no começo: com column o justify-content passa a mexer na vertical.</li>
+    </ul>
+
+    <h2>Nível 13</h2>
+    <p>Os sapos precisam ficar na ordem invertida, no centro na horizontal e embaixo na vertical.</p>
+<pre>
+#pond {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: flex-end;
+}
+</pre>
+    <ul>
+        <li><b>flex-direction: row-reverse</b>: continua em linha, mas a ordem fica ao contrário, o primeiro sapo vai para a direita. Assim cada sapo fica na frente da vitória-régia da mesma cor.</li>
+        <li><b>justify-content: center</b>: centraliza os itens no eixo principal, que é o horizontal.</li>
+        <li><b>align-items: flex-end</b>: alinha os itens no eixo cruzado (o vertical), no final, que é a parte de baixo.</li>
+    </ul>
+
+    <p>Referência: <a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">A Complete Guide to Flexbox - CSS-Tricks</a></p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Layout com flex</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header, footer {
+            background-color: #9ccf0a;
+            padding: 12px;
+            height: 60px;
+        }
+
+        .meio {
+            display: flex;
+            flex: 1;
+        }
+
+        article {
+            flex: 3;
+            padding: 12px;
+            background-color: #fefefc;
+        }
+
+        aside {
+            flex: 1;
+            padding: 12px;
+            background-color: #f5f3d8;
+        }
+
+        nav {
+            flex: 1;
+            padding: 12px;
+            background-color: #d6e6d6;
+        }
+    </style>
+</head>
+<body>
+    <header>Header</header>
+
+    <div class="meio">
+        <article>Article</article>
+        <aside>Aside</aside>
+        <nav>Nav</nav>
+    </div>
+
+    <footer>Footer</footer>
+</body>
+</html>
