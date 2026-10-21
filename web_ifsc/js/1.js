@@ -2,7 +2,7 @@ console.log("NADA");
 
 //declarar variaveis em JS.
 i = 0; //varivael global var
-var nome = "Robson" 
+var nome = "kenai" 
 nome = 1;                        //define variavel global
 let numero; // define variavel local por bloco
 const numeroPi = 3.141516;

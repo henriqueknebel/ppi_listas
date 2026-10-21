@@ -6,11 +6,11 @@
 
 //O var e o lef se distinguem pelo escopo e declaracação
 
-let nome = "Victor"
+let nome = "henrique"
 var sobrenome; 
 
-if(nome == "Victor"){
-    sobrenome = "Junkes"
+if(nome == "henrique"){
+    sobrenome = "knebel"
     let idade = 20;
     var pet = "dog";
     console.log("nome: " + nome + " Sobrenome: " + sobrenome + " idade: " + idade + " pet: " + pet)
@@ -26,8 +26,8 @@ if(idade === "20"){ //Compara o valor e o tipo da variavel
     console.log("B")
 }
 
-peso = 80;
-altura = 1.80;
+peso = 70;
+altura = 1.70;
 imc = peso / (altura * altura);
 
 if(imc < 18.5){
