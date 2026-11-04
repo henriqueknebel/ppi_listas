@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora</title>
+    <style>
+        body {
+            background-color: #a8d8e8;
+            font-family: Arial, sans-serif;
+        }
+
+        .calculadora {
+            width: 320px;
+            margin: 50px auto;
+        }
+
+        #visor {
+            background-color: #222;
+            color: white;
+            font-size: 40px;
+            text-align: right;
+            padding: 15px;
+        }
+
+        .teclas {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        button {
+            height: 65px;
+            font-size: 24px;
+            border: 1px solid #bbb;
+            background-color: white;
+        }
+
+        #btnIgual {
+            grid-column: 4;
+            grid-row: 2 / 6;
+            height: auto;
+            background-color: #f7845a;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculadora">
+        <div id="visor">0</div>
+
+        <div class="teclas">
+            <button onclick="operacao('+')">+</button>
+            <button onclick="operacao('-')">-</button>
+            <button onclick="operacao('*')">×</button>
+            <button onclick="operacao('/')">÷</button>
+
+            <button onclick="digitar('7')">7</button>
+            <button onclick="digitar('8')">8</button>
+            <button onclick="digitar('9')">9</button>
+            <button id="btnIgual" onclick="calcular()">=</button>
+
+            <button onclick="digitar('4')">4</button>
+            <button onclick="digitar('5')">5</button>
+            <button onclick="digitar('6')">6</button>
+
+            <button onclick="digitar('1')">1</button>
+            <button onclick="digitar('2')">2</button>
+            <button onclick="digitar('3')">3</button>
+
+            <button onclick="digitar('0')">0</button>
+            <button onclick="digitar('.')">.</button>
+            <button onclick="limpar()">AC</button>
+        </div>
+    </div>
+
+    <script>
+        let numero1 = 0;
+        let operador = "";
+        let visor = "0";
+
+        function mostrar() {
+            document.getElementById("visor").innerText = visor;
+        }
+
+        function digitar(valor) {
+            if (visor === "0") {
+                visor = valor;
+            } else {
+                visor += valor;
+            }
+            mostrar();
+        }
+
+        function operacao(op) {
+            numero1 = parseFloat(visor);
+            operador = op;
+            visor = "0";
+        }
+
+        function calcular() {
+            const numero2 = parseFloat(visor);
+            let resultado = 0;
+
+            if (operador === "+") {
+                resultado = numero1 + numero2;
+            } else if (operador === "-") {
+                resultado = numero1 - numero2;
+            } else if (operador === "*") {
+                resultado = numero1 * numero2;
+            } else if (operador === "/") {
+                resultado = numero1 / numero2;
+            }
+
+            visor = String(resultado);
+            operador = "";
+            mostrar();
+        }
+
+        function limpar() {
+            numero1 = 0;
+            operador = "";
+            visor = "0";
+            mostrar();
+        }
+    </script>
+</body>
+</html>

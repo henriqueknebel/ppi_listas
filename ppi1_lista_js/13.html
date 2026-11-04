@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desenho com Canvas</title>
+</head>
+<body>
+    <h1>Desenho com Canvas</h1>
+    <canvas id="meuCanvas" width="400" height="300" style="border:1px solid #000;"></canvas>
+
+    <script>
+        // a) contexto 2D
+        const canvas = document.getElementById("meuCanvas");
+        const ctx = canvas.getContext("2d");
+
+        // b) retangulo azul 100x50 em (50, 50)
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 100, 50);
+
+        // c) circulo vermelho com raio 30 em (200, 150)
+        ctx.beginPath();
+        ctx.arc(200, 150, 30, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        // d) texto preto em (120, 250)
+        ctx.fillStyle = "black";
+        ctx.font = "30px Arial";
+        ctx.fillText("Canvas!", 120, 250);
+    </script>
+</body>
+</html>

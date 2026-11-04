@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Tipos de Variáveis e Operadores</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+    <h1>Tipos de Variáveis e Operadores</h1>
+    <button id="btnMostrar">Mostrar tipos</button>
+
+    <h2>Tipos</h2>
+    <p id="pstring"></p>
+    <p id="pnumero"></p>
+    <p id="pboolean"></p>
+    <p id="pundefined"></p>
+    <p id="pnull"></p>
+    <p id="pobjeto"></p>
+    <p id="parray"></p>
+
+    <h2>Operações entre tipos diferentes</h2>
+    <p id="op1"></p>
+    <p id="op2"></p>
+    <p id="op3"></p>
+    <p id="op4"></p>
+    <p id="op5"></p>
+    <p id="op6"></p>
+
+    <script>
+        function mostrarTipos() {
+            const texto = "IFSC";
+            const numero = 10;
+            const verdadeiro = true;
+            let semValor;
+            const nulo = null;
+            const pessoa = { nome: "Ana", idade: 17 };
+            const lista = [1, 2, 3];
+
+            document.getElementById("pstring").innerText = `"${texto}" é do tipo ${typeof texto}`;
+            document.getElementById("pnumero").innerText = `${numero} é do tipo ${typeof numero}`;
+            document.getElementById("pboolean").innerText = `${verdadeiro} é do tipo ${typeof verdadeiro}`;
+            document.getElementById("pundefined").innerText = `semValor é do tipo ${typeof semValor}`;
+            document.getElementById("pnull").innerText = `null é do tipo ${typeof nulo} (é um erro antigo do JavaScript, null não é objeto)`;
+            document.getElementById("pobjeto").innerText = `{ nome, idade } é do tipo ${typeof pessoa}`;
+            document.getElementById("parray").innerText = `[1, 2, 3] é do tipo ${typeof lista} (array também é objeto; Array.isArray dá ${Array.isArray(lista)})`;
+
+            // operacoes entre tipos diferentes
+            console.log("string + number:", "5" + 2);
+            console.log("string - number:", "5" - 2);
+            console.log("boolean * number:", true * 10);
+            console.log("string * number:", "abc" * 2);
+            console.log("null + number:", null + 5);
+            console.log("undefined + number:", undefined + 5);
+
+            document.getElementById("op1").innerText = `"5" + 2 = ${"5" + 2} → o + com string junta os textos (concatena).`;
+            document.getElementById("op2").innerText = `"5" - 2 = ${"5" - 2} → o - só funciona com números, então "5" vira 5.`;
+            document.getElementById("op3").innerText = `true * 10 = ${true * 10} → true vira 1 e false vira 0.`;
+            document.getElementById("op4").innerText = `"abc" * 2 = ${"abc" * 2} → "abc" não vira número, o resultado é NaN (Not a Number).`;
+            document.getElementById("op5").innerText = `null + 5 = ${null + 5} → null vira 0.`;
+            document.getElementById("op6").innerText = `undefined + 5 = ${undefined + 5} → undefined não vira número, dá NaN.`;
+        }
+
+        document.getElementById("btnMostrar").addEventListener("click", mostrarTipos);
+    </script>
+</body>
+</html>

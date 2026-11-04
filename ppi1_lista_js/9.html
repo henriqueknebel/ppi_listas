@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cores com a Tecla Espaço</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .paleta {
+            display: flex;
+            height: 150px;
+        }
+
+        .cor {
+            flex: 1;
+            text-align: center;
+            padding-top: 110px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="paleta">
+        <div class="cor" id="cor1" style="background-color: #05668D;">05668D</div>
+        <div class="cor" id="cor2" style="background-color: #427AA1;">427AA1</div>
+        <div class="cor" id="cor3" style="background-color: #EBF2FA;">EBF2FA</div>
+        <div class="cor" id="cor4" style="background-color: #679436;">679436</div>
+        <div class="cor" id="cor5" style="background-color: #A5BE00;">A5BE00</div>
+    </div>
+
+    <script>
+        function corAleatoria() {
+            const letras = "0123456789ABCDEF";
+            let cor = "";
+            for (let i = 0; i < 6; i++) {
+                cor += letras[Math.floor(Math.random() * 16)];
+            }
+            return cor;
+        }
+
+        document.addEventListener("keydown", function (evento) {
+            if (evento.code === "Space") {
+                for (let i = 1; i <= 5; i++) {
+                    const cor = corAleatoria();
+                    document.getElementById(`cor${i}`).style.backgroundColor = `#${cor}`;
+                    document.getElementById(`cor${i}`).innerText = cor;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

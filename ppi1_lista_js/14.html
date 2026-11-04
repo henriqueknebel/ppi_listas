@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Captura de Teclas</title>
+</head>
+<body>
+    <h1>Captura de Teclas do Teclado</h1>
+    <div id="saida"></div>
+    <p id="codigo"></p>
+
+    <script>
+        let texto = "";
+
+        document.addEventListener("keydown", function (evento) {
+            console.log(evento.key);
+
+            // desafio: mostrar o codigo da tecla
+            document.getElementById("codigo").innerText = `Código: ${evento.code}`;
+
+            if (evento.key === "Backspace") {
+                // desafio: apagar o ultimo caractere
+                texto = texto.slice(0, -1);
+            } else if (evento.key.length === 1) {
+                // so letras, numeros e simbolos (ignora Shift, Ctrl...)
+                texto += evento.key;
+            }
+
+            document.getElementById("saida").innerText = texto;
+        });
+    </script>
+</body>
+</html>

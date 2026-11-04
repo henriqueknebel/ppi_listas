@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>O que é JavaScript?</title>
+    <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body id="corpo">
+    <h1 id="titulo">O que é JavaScript?</h1>
+
+    <h2 id="tMotivacao">Motivação</h2>
+    <p id="pMotivacao">
+        No começo da web as páginas eram estáticas: só mostravam texto e imagens. Para validar um formulário
+        ou mudar algo na tela era preciso mandar tudo para o servidor e esperar outra página. Em 1995 a
+        Netscape criou o JavaScript (primeiro chamado de Mocha e depois LiveScript) para deixar as páginas
+        interativas, rodando direto no navegador. Hoje ele segue o padrão ECMAScript.
+    </p>
+
+    <h2 id="tExecucao">Navegador x servidor</h2>
+    <p id="pExecucao">
+        No <b>navegador</b> o JavaScript roda no computador do usuário e mexe na página (DOM), responde a
+        cliques, teclas e formulários. No <b>servidor</b>, com o Node.js, ele roda na máquina do servidor e
+        pode acessar arquivos, banco de dados e rede, mas não tem página nem <code>document</code>.
+    </p>
+
+    <h2 id="tSandbox">Sandbox</h2>
+    <p id="pSandbox">
+        No navegador o JavaScript roda dentro de uma <i>sandbox</i> (caixa de areia): um ambiente isolado
+        que não deixa o script acessar os arquivos do computador nem outros programas. Isso protege o
+        usuário de sites mal-intencionados.
+    </p>
+
+    <h2 id="tObjetos">Objetos globais</h2>
+    <p id="pObjetos">
+        O navegador já oferece alguns objetos prontos: o <code>document</code> representa a página e
+        permite pegar e alterar elementos; o <code>console</code> mostra mensagens para o programador (F12);
+        e o <code>alert</code> abre uma caixinha de mensagem para o usuário.
+    </p>
+
+    <p id="pHora"></p>
+
+    <script>
+        console.log("A página 1.html foi carregada!");
+
+        alert("Olá! Seja bem-vindo à página sobre JavaScript.");
+
+        const agora = new Date();
+        document.getElementById("pHora").innerHTML = `Hora atual: <b>${agora.toLocaleTimeString()}</b>`;
+    </script>
+</body>
+</html>
